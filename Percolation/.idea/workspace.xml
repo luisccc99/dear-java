@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59f0dacb-1db7-47e8-92c1-e4abcf954473" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Percolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Percolation.java" afterDir="false" />
     </list>
@@ -45,7 +44,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
-  <component name="RunManager" selected="Application.WeightedQuickUnionUF">
+  <component name="RunManager" selected="Application.Percolation">
     <configuration name="Percolation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Percolation" />
       <module name="Percolation" />
@@ -67,8 +66,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WeightedQuickUnionUF" />
         <item itemvalue="Application.Percolation" />
+        <item itemvalue="Application.WeightedQuickUnionUF" />
       </list>
     </recent_temporary>
   </component>
@@ -83,7 +82,8 @@
       <option name="presentableId" value="Default" />
       <updated>1585516221674</updated>
       <workItem from="1585516224027" duration="722000" />
-      <workItem from="1585723046763" duration="5546000" />
+      <workItem from="1585723046763" duration="6134000" />
+      <workItem from="1585891363883" duration="7757000" />
     </task>
     <servers />
   </component>
@@ -103,33 +103,33 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="389" y="125" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1585516318477" />
-    <state width="1322" height="192" key="GridCell.Tab.0.bottom" timestamp="1585730156321">
+    <state width="1322" height="192" key="GridCell.Tab.0.bottom" timestamp="1585899329175">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1585730156321" />
-    <state width="1322" height="192" key="GridCell.Tab.0.center" timestamp="1585730156320">
+    <state width="1322" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1585899329175" />
+    <state width="1322" height="192" key="GridCell.Tab.0.center" timestamp="1585899329175">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1585730156320" />
-    <state width="1322" height="192" key="GridCell.Tab.0.left" timestamp="1585730156320">
+    <state width="1322" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1585899329175" />
+    <state width="1322" height="192" key="GridCell.Tab.0.left" timestamp="1585899329175">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1585730156320" />
-    <state width="1322" height="192" key="GridCell.Tab.0.right" timestamp="1585730156320">
+    <state width="1322" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1585899329175" />
+    <state width="1322" height="192" key="GridCell.Tab.0.right" timestamp="1585899329175">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1585730156320" />
+    <state width="1322" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1585899329175" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1585516324516">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1585516324516" />
-    <state x="378" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1585723050829">
+    <state x="378" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1585891374484">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="378" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1585723050829" />
-    <state x="339" y="172" key="run.anything.popup" timestamp="1585724923452">
+    <state x="378" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1585891374484" />
+    <state x="339" y="172" key="run.anything.popup" timestamp="1585893668409">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1585724923452" />
+    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1585893668409" />
   </component>
 </project>
