@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59f0dacb-1db7-47e8-92c1-e4abcf954473" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/OmgArray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Percolation/Percolation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Percolation/Percolation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Percolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Percolation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +47,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RunManager" selected="Application.Percolation">
+    <configuration name="OmgArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="OmgArray" />
+      <module name="Percolation" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Percolation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Percolation" />
       <module name="Percolation" />
@@ -67,6 +76,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Percolation" />
+        <item itemvalue="Application.OmgArray" />
         <item itemvalue="Application.WeightedQuickUnionUF" />
       </list>
     </recent_temporary>
@@ -83,7 +93,9 @@
       <updated>1585516221674</updated>
       <workItem from="1585516224027" duration="722000" />
       <workItem from="1585723046763" duration="6134000" />
-      <workItem from="1585891363883" duration="7757000" />
+      <workItem from="1585891363883" duration="8365000" />
+      <workItem from="1586432401068" duration="421000" />
+      <workItem from="1586704772173" duration="9239000" />
     </task>
     <servers />
   </component>
@@ -103,33 +115,64 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="389" y="125" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1585516318477" />
-    <state width="1322" height="192" key="GridCell.Tab.0.bottom" timestamp="1585899329175">
+    <state width="1322" height="239" key="GridCell.Tab.0.bottom" timestamp="1586755884313">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1585899329175" />
-    <state width="1322" height="192" key="GridCell.Tab.0.center" timestamp="1585899329175">
+    <state width="1322" height="239" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1586755884313" />
+    <state width="1322" height="239" key="GridCell.Tab.0.center" timestamp="1586755884313">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1585899329175" />
-    <state width="1322" height="192" key="GridCell.Tab.0.left" timestamp="1585899329175">
+    <state width="1322" height="239" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1586755884313" />
+    <state width="1322" height="239" key="GridCell.Tab.0.left" timestamp="1586755884313">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1585899329175" />
-    <state width="1322" height="192" key="GridCell.Tab.0.right" timestamp="1585899329175">
+    <state width="1322" height="239" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1586755884313" />
+    <state width="1322" height="239" key="GridCell.Tab.0.right" timestamp="1586755884313">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1585899329175" />
+    <state width="1322" height="239" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1586755884313" />
+    <state width="1322" height="239" key="GridCell.Tab.1.bottom" timestamp="1586755884313">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1322" height="239" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1586755884313" />
+    <state width="1322" height="239" key="GridCell.Tab.1.center" timestamp="1586755884313">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1322" height="239" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1586755884313" />
+    <state width="1322" height="239" key="GridCell.Tab.1.left" timestamp="1586755884313">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1322" height="239" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1586755884313" />
+    <state width="1322" height="239" key="GridCell.Tab.1.right" timestamp="1586755884313">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1322" height="239" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1586755884313" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1585516324516">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1585516324516" />
-    <state x="378" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1585891374484">
+    <state width="1364" height="766" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1586754734617">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="378" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1585891374484" />
-    <state x="339" y="172" key="run.anything.popup" timestamp="1585893668409">
+    <state width="1364" height="766" key="com.intellij.byteCodeViewer.ShowByteCodeAction/0.0.1366.768@0.0.1366.768" timestamp="1586754734617" />
+    <state x="378" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1586704779078">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1585893668409" />
+    <state x="378" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1586704779078" />
+    <state x="245" y="120" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586755520153">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="245" y="120" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.768@0.0.1366.768" timestamp="1586755520153" />
+    <state x="413" y="164" key="extract.method.dialog" timestamp="1586706745758">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="413" y="164" key="extract.method.dialog/0.0.1366.768@0.0.1366.768" timestamp="1586706745758" />
+    <state x="339" y="172" key="run.anything.popup" timestamp="1586711560134">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1586711560134" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Percolation$Percolation.ic" NAME="Percolation Coverage Results" MODIFIED="1586754476189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
