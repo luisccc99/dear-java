@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59f0dacb-1db7-47e8-92c1-e4abcf954473" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/OmgArray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Percolation/Percolation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Percolation/Percolation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Percolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Percolation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +41,7 @@
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RunManager" selected="Application.Percolation">
     <configuration name="OmgArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -95,7 +92,7 @@
       <workItem from="1585723046763" duration="6134000" />
       <workItem from="1585891363883" duration="8365000" />
       <workItem from="1586432401068" duration="421000" />
-      <workItem from="1586704772173" duration="9239000" />
+      <workItem from="1586704772173" duration="10080000" />
     </task>
     <servers />
   </component>
@@ -111,26 +108,26 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="137" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1585725084930" />
-    <state x="389" y="125" key="FileChooserDialogImpl" timestamp="1585516318477">
+    <state x="389" y="125" key="FileChooserDialogImpl" timestamp="1586756792999">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="389" y="125" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1585516318477" />
-    <state width="1322" height="239" key="GridCell.Tab.0.bottom" timestamp="1586755884313">
+    <state x="389" y="125" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1586756792999" />
+    <state width="1322" height="192" key="GridCell.Tab.0.bottom" timestamp="1586755944704">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="239" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1586755884313" />
-    <state width="1322" height="239" key="GridCell.Tab.0.center" timestamp="1586755884313">
+    <state width="1322" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1586755944704" />
+    <state width="1322" height="192" key="GridCell.Tab.0.center" timestamp="1586755944704">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="239" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1586755884313" />
-    <state width="1322" height="239" key="GridCell.Tab.0.left" timestamp="1586755884313">
+    <state width="1322" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1586755944704" />
+    <state width="1322" height="192" key="GridCell.Tab.0.left" timestamp="1586755944704">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="239" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1586755884313" />
-    <state width="1322" height="239" key="GridCell.Tab.0.right" timestamp="1586755884313">
+    <state width="1322" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1586755944704" />
+    <state width="1322" height="192" key="GridCell.Tab.0.right" timestamp="1586755944704">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="239" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1586755884313" />
+    <state width="1322" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1586755944704" />
     <state width="1322" height="239" key="GridCell.Tab.1.bottom" timestamp="1586755884313">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -147,10 +144,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1322" height="239" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1586755884313" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1585516324516">
+    <state x="163" y="0" key="SettingsEditor" timestamp="1586756794686">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1585516324516" />
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1586756794686" />
     <state width="1364" height="766" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1586754734617">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
