@@ -4,31 +4,31 @@ import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
 
 public class PercolationStats {
-    Percolation percolation;
-    int N;
-    int T;
-    double[] numberOpenSites;
+    private Percolation percolation;
+    private final int n;
+    private final int trials;
+    private final double[] numberOpenSites;
+    private static final double CONFIDENCE = 1.96;
 
 
     public PercolationStats(int n, int trials) {
         validateIndex(n);
         validateIndex(trials);
-        this.N = n;
-        this.T = trials;
+        this.n = n;
+        this.trials = trials;
         numberOpenSites = new double[trials];
         for (int i = 0; i < trials; i++) {
             percolation = new Percolation(n);
             numberOpenSites[i] += (double) fillTillPercolates() / (n * n);
         }
-        formattedOutput();
     }
 
     private int fillTillPercolates() {
         int rndRow;
         int rndcol;
         while (!percolation.percolates()) {
-            rndRow = StdRandom.uniform(1, N + 1);
-            rndcol = StdRandom.uniform(1, N + 1);
+            rndRow = StdRandom.uniform(1, n + 1);
+            rndcol = StdRandom.uniform(1, n + 1);
             percolation.open(rndRow, rndcol);
         }
         return percolation.numberOfOpenSites();
@@ -43,11 +43,11 @@ public class PercolationStats {
     }
 
     public double confidenceLo() {
-        return mean() - ((1.96 * stddev()) / Math.sqrt((double) T));
+        return mean() - ((CONFIDENCE * stddev()) / Math.sqrt(trials));
     }
 
-    public double confidenceH() {
-        return mean() + ((1.96 * stddev()) / Math.sqrt((double) T));
+    public double confidenceHi() {
+        return mean() + ((CONFIDENCE * stddev()) / Math.sqrt(trials));
     }
 
     private void validateIndex(int entry) {
@@ -57,17 +57,14 @@ public class PercolationStats {
         }
     }
 
-    private void formattedOutput() {
-        StdOut.println("mean                    " + "= " + mean());
-        StdOut.println("stddev                  " + "= " + stddev());
-        StdOut.println("95% confidence interval " + "= " + "[" + confidenceLo() +
-                ", [" + confidenceH() + "]");
-    }
-
     public static void main(String[] args) {
         int n = StdIn.readInt();
         int trials = StdIn.readInt();
         PercolationStats percolationStats = new PercolationStats(n, trials);
+        StdOut.println("mean                    " + "= " + percolationStats.mean());
+        StdOut.println("stddev                  " + "= " + percolationStats.stddev());
+        StdOut.println("95% confidence interval " + "= " + "[" + percolationStats.confidenceHi() +
+                ", [" + percolationStats.confidenceLo() + "]");
     }
 
 }
