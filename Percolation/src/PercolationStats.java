@@ -4,11 +4,11 @@ import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
 
 public class PercolationStats {
-    private Percolation percolation;
+    private static Percolation percolation;
     private final int n;
     private final int trials;
     private final double[] numberOpenSites;
-    private static final double CONFIDENCE = 1.96;
+    private static final double confidence = 1.96;
 
 
     public PercolationStats(int n, int trials) {
@@ -43,11 +43,11 @@ public class PercolationStats {
     }
 
     public double confidenceLo() {
-        return mean() - ((CONFIDENCE * stddev()) / Math.sqrt(trials));
+        return mean() - ((confidence * stddev()) / Math.sqrt(trials));
     }
 
     public double confidenceHi() {
-        return mean() + ((CONFIDENCE * stddev()) / Math.sqrt(trials));
+        return mean() + ((confidence * stddev()) / Math.sqrt(trials));
     }
 
     private void validateIndex(int entry) {
@@ -58,8 +58,8 @@ public class PercolationStats {
     }
 
     public static void main(String[] args) {
-        int n = StdIn.readInt();
-        int trials = StdIn.readInt();
+        int n = Integer.parseInt(StdIn.readString());
+        int trials = Integer.parseInt(StdIn.readString());
         PercolationStats percolationStats = new PercolationStats(n, trials);
         StdOut.println("mean                    " + "= " + percolationStats.mean());
         StdOut.println("stddev                  " + "= " + percolationStats.stddev());
