@@ -3,13 +3,13 @@ import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
 
-    int topSite = 0;
-    int bottomSite = 1;
+    private final int TOP_SITE = 0;
+    private final int BOTTOM_SITE = 1;
 
-    private boolean[][] site;
+    private final boolean[][] site;
     private int openSites = 0;
-    private int N;
-    private WeightedQuickUnionUF system;
+    private final int N;
+    private final WeightedQuickUnionUF system;
 
     //i = y, j = x
     public Percolation(int n) {
@@ -22,8 +22,8 @@ public class Percolation {
                 site[i][j] = false;
                 //connecting bottom and top site with bottom and top rows
                 if (i == 1 || i == N - 1) {
-                    system.union(xyTo1D(j, 1), topSite);
-                    system.union(xyTo1D(j, N - 1), bottomSite);
+                    system.union(xyTo1D(j, 1), TOP_SITE);
+                    system.union(xyTo1D(j, N - 1), BOTTOM_SITE);
                 }
             }
         }
@@ -41,7 +41,7 @@ public class Percolation {
 
     }
 
-    public void checkNeighbors(int row, int col) {
+    private void checkNeighbors(int row, int col) {
         int upY = row - 1;
         int downY = row + 1;
         int backX = col - 1;
@@ -101,7 +101,7 @@ public class Percolation {
         validateIndex(col);
         int element = xyTo1D(col, row);
         if (isOpen(row, col)) {
-            return connected(element, topSite);
+            return connected(element, TOP_SITE);
         }
         return false;
     }
@@ -111,7 +111,7 @@ public class Percolation {
     }
 
     public boolean percolates() {
-        return connected(topSite, bottomSite);
+        return connected(TOP_SITE, BOTTOM_SITE);
     }
 
     public boolean connected(int p, int q) {
@@ -126,29 +126,41 @@ public class Percolation {
     }
 
     private int xyTo1D(int x, int y) {
-        int i = x + N  * y;
+        int i = x + N * y;
         return i;
     }
 
-    public static void main(String[] args) {
-        int N = StdIn.readInt();
-        Percolation system = new Percolation(N);
-        system.open(1, 1);
-        system.open(2, 1);
-        system.open(3, 1);
-        system.open(4, 1);
-        system.open(5, 1);
-        System.out.println();
-        System.out.println(system.xyTo1D(1, 1));
-        System.out.println(system.xyTo1D(1, 2));
-        System.out.println(system.xyTo1D(1, 3));
-        System.out.println(system.xyTo1D(1, 4));
-        System.out.println(system.xyTo1D(1, 5));
-        System.out.println();
-        System.out.println(system.connected(7, 31));
-        System.out.println();
-        System.out.println("Percolates: " + system.percolates());
-        System.out.println("number of open sites: " + system.openSites);
+//    public void printSystem() {
+//        for (int i = 1; i < N; i++) {
+//            for (int j = 1; j < N; j++) {
+//                if (!site[i][j]) {
+//                    System.out.print("[ ]");
+//                } else {
+//                    System.out.print("[*]");
+//                }
+//            }
+//            System.out.println("");
+//        }
+//    }
 
+    public static void main(String[] args) {
+//        int N = StdIn.readInt();
+//        Percolation system = new Percolation(N);
+//        system.printSystem();
+//        system.open(1, 1);
+//        system.open(1, 4);
+//        system.open(2, 4);
+//        system.open(2, 2);
+//        system.open(3, 3);
+//        system.open(3, 4);
+//        system.open(4, 4);
+//
+//        System.out.println();
+//        System.out.println(system.isFull(4, 4));
+//        System.out.println();
+//        system.printSystem();
+//        System.out.println("Percolates: " + system.percolates());
+//        System.out.println("number of open sites: " + system.openSites);
+//
     }
 }

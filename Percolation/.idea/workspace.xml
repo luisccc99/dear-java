@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59f0dacb-1db7-47e8-92c1-e4abcf954473" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Percolation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Percolation/OmgArray.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Percolation/Percolation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Percolation/Percolation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Percolation/PercolationStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Percolation/PercolationStats.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Percolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Percolation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PercolationStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PercolationStats.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +27,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -44,9 +44,9 @@
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
-  <component name="RunManager" selected="Application.Percolation">
+  <component name="RunManager" selected="Application.PercolationStats">
     <configuration name="OmgArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="OmgArray" />
       <module name="Percolation" />
@@ -56,6 +56,13 @@
     </configuration>
     <configuration name="Percolation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Percolation" />
+      <module name="Percolation" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PercolationStats" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PercolationStats" />
       <module name="Percolation" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -75,6 +82,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PercolationStats" />
         <item itemvalue="Application.Percolation" />
         <item itemvalue="Application.OmgArray" />
         <item itemvalue="Application.WeightedQuickUnionUF" />
@@ -98,11 +106,13 @@
       <workItem from="1586704772173" duration="10461000" />
       <workItem from="1586757395600" duration="128000" />
       <workItem from="1586767278916" duration="630000" />
+      <workItem from="1587099815076" duration="2886000" />
+      <workItem from="1587102764833" duration="4493000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="400" y="42" key="#WeightedQuickUnionUF" timestamp="1585730154733">
@@ -117,22 +127,26 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="389" y="125" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1586756792999" />
-    <state width="1322" height="192" key="GridCell.Tab.0.bottom" timestamp="1586767917148">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1320" height="319" key="GridCell.Tab.0.bottom" timestamp="1587108856743">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="1322" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1586767917148" />
-    <state width="1322" height="192" key="GridCell.Tab.0.center" timestamp="1586767917148">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1320" height="319" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1587108856743" />
+    <state width="1320" height="319" key="GridCell.Tab.0.center" timestamp="1587108856742">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="1322" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1586767917148" />
-    <state width="1322" height="192" key="GridCell.Tab.0.left" timestamp="1586767917148">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1320" height="319" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1587108856742" />
+    <state width="1320" height="319" key="GridCell.Tab.0.left" timestamp="1587108856741">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="1322" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1586767917148" />
-    <state width="1322" height="192" key="GridCell.Tab.0.right" timestamp="1586767917148">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1320" height="319" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1587108856741" />
+    <state width="1320" height="319" key="GridCell.Tab.0.right" timestamp="1587108856742">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="1322" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1586767917148" />
+    <state width="1320" height="319" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1587108856742" />
     <state width="1322" height="239" key="GridCell.Tab.1.bottom" timestamp="1586757180376">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -149,10 +163,11 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1322" height="239" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1586757180376" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1586756794686">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="163" y="27" key="SettingsEditor" timestamp="1587102843689">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1586756794686" />
+    <state x="163" y="27" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1587102843689" />
     <state width="1364" height="766" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1586754734617">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
