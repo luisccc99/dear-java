@@ -2,7 +2,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 // TODO: use doubly-linked list implementation
-public class Dequeue<Item> implements Iterable<Item> {
+public class Deque<Item> implements Iterable<Item> {
 
     private class Node {
         Item item;
@@ -10,7 +10,7 @@ public class Dequeue<Item> implements Iterable<Item> {
         Node last;
     }
 
-    public Dequeue() {
+    public Deque() {
 
     }
 

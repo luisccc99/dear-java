@@ -1,20 +1,23 @@
+import edu.princeton.cs.algs4.StdRandom;
+
 import java.util.Iterator;
 
 public class RandomizedQueue<Item> implements Iterable<Item> {
 
     private Item[] items = (Item[]) new Object[1];
-    private int N = 0;
+    private int numberOfItems = 0;
+    private int randomPosition;
 
     public RandomizedQueue() {
 
     }
 
     public boolean isEmpty() {
-        return N == 0;
+        return numberOfItems == 0;
     }
 
     public int size() {
-        return N;
+        return numberOfItems;
     }
 
     public void enqueue(Item item) {
@@ -24,30 +27,38 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         if (isFull()) {
             resize(2 * items.length);
         }
-        items[N++] = item;
+        items[numberOfItems++] = item;
     }
 
     public Item dequeue() {
         if (isEmpty()) {
             throw new java.util.NoSuchElementException();
         }
-        return null; // TODO: change this
+        int lastPosition = numberOfItems - 1;
+        randomPosition = StdRandom.uniform(numberOfItems - 1);
+        Item randomItem = items[randomPosition];
+        Item lastItem = items[lastPosition];
+        items[lastPosition] = randomItem;
+        items[randomPosition] = lastItem;
+        if (numberOfItems > 0 && numberOfItems == items.length / 4) resize(size() / 2);
+        return items[--numberOfItems];
     }
 
     public Item sample() {
+        randomPosition = StdRandom.uniform(numberOfItems - 1);
         if (isEmpty()) {
             throw new java.util.NoSuchElementException();
         }
-        return null; // TODO: change this too ...
+        return items[randomPosition];
     }
 
     private boolean isFull() {
-        return N == items.length;
+        return numberOfItems == items.length;
     }
 
     private void resize(int capacity) {
         Item[] temp = (Item[]) new Object[capacity];
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < numberOfItems; i++) {
             temp[i] = items[i];
         }
         items = temp;
@@ -59,8 +70,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     private class QueueIterator implements Iterator<Item> {
-
-        private int i = N;
+        private int i = numberOfItems;
 
         @Override
         public boolean hasNext() {
@@ -84,8 +94,8 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
             queue.enqueue("Item " + i);
         }
         System.out.println(queue.size());
-        for (String word : queue) {
-            System.out.println(word);
+        for (int i = 0; i < 30; i++) {
+            System.out.println(queue.dequeue());
         }
         System.out.println(queue.size());
     }
