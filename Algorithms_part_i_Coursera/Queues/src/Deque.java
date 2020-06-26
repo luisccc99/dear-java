@@ -35,7 +35,7 @@ public class Deque<Item> implements Iterable<Item> {
         if (oldFirst != null) {
             oldFirst.prev = first;
         }
-        if (last == null) {
+        if (isEmpty()) {
             last = first;
         }
         numberOfItems++;
@@ -51,7 +51,7 @@ public class Deque<Item> implements Iterable<Item> {
         if (oldLast != null) {
             oldLast.next = last;
         }
-        if (first == null) {
+        if (isEmpty()) {
             first = last;
         }
         numberOfItems++;
@@ -61,16 +61,14 @@ public class Deque<Item> implements Iterable<Item> {
         if (isEmpty()) throw new NoSuchElementException();
         Item item = first.item;
         first = first.next;
-        first.prev = null;
         numberOfItems--;
         return item;
     }
 
     public Item removeLast() {
-        if (isEmpty()) throw new java.util.NoSuchElementException();
+        if (isEmpty()) throw new NoSuchElementException();
         Item item = last.item;
         last = last.prev;
-        last.next = null;
         numberOfItems--;
         return item;
     }
@@ -94,7 +92,7 @@ public class Deque<Item> implements Iterable<Item> {
 
         @Override
         public Item next() {
-            if (!hasNext()) throw new java.util.NoSuchElementException();
+            if (!hasNext()) throw new NoSuchElementException();
             Item item = current.item;
             current = current.next;
             return item;
@@ -107,13 +105,12 @@ public class Deque<Item> implements Iterable<Item> {
     }
 
     public static void main(String[] args) {
-        Deque<String> bands = new Deque<>();
-        bands.addFirst("Queen");
-        bands.addLast("The Beatles");
-        bands.addFirst("The Cranberries");
-        for (String band : bands) {
-            System.out.println(band);
-        }
+        Deque<Integer> deque = new Deque<>();
+        deque.addLast(1);
+        deque.addFirst(2);
+        deque.addFirst(3);
+        deque.addFirst(4);
+        System.out.println(deque.removeLast());
     }
 
 }

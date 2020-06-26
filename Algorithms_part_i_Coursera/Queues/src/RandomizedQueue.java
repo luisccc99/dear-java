@@ -1,6 +1,7 @@
 import edu.princeton.cs.algs4.StdRandom;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class RandomizedQueue<Item> implements Iterable<Item> {
     private int numberOfItems;
@@ -31,21 +32,21 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     public Item dequeue() {
         if (isEmpty()) {
-            throw new java.util.NoSuchElementException();
+            throw new NoSuchElementException();
         }
         int lastPosition = numberOfItems - 1;
         int randomPosition = StdRandom.uniform(numberOfItems);
         Item randomItem = getItem(lastPosition, randomPosition, this.items);
         numberOfItems--;
-        if (numberOfItems > 0 && numberOfItems == items.length / 4) resize(size() / 2);
+        if (numberOfItems > 0 && numberOfItems == items.length / 4) resize(items.length / 2);
         return randomItem;
     }
 
     public Item sample() {
-        int randomPosition = StdRandom.uniform(numberOfItems);
         if (isEmpty()) {
-            throw new java.util.NoSuchElementException();
+            throw new NoSuchElementException();
         }
+        int randomPosition = StdRandom.uniform(numberOfItems);
         return items[randomPosition];
     }
 
@@ -55,7 +56,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     private void resize(int capacity) {
         Item[] copy = (Item[]) new Object[capacity];
-        for (int i = 0; i < numberOfItems; i++) {
+        for (int i = 0; i < items.length; i++) {
             copy[i] = items[i];
         }
         items = copy;
@@ -75,30 +76,30 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     private class QueueIterator implements Iterator<Item> {
-        private int N = numberOfItems;
-        private Item[] toIterate;
+        private int copy = numberOfItems;
+        private final Item[] toIterate;
 
         QueueIterator() {
-            toIterate = (Item[]) new Object[N];
-            for (int i = 0; i < N; i++) {
+            toIterate = (Item[]) new Object[copy];
+            for (int i = 0; i < copy; i++) {
                 toIterate[i] = items[i];
             }
         }
 
         @Override
         public boolean hasNext() {
-            return N > 0;
+            return copy > 0;
         }
 
         @Override
         public Item next() {
             if (!hasNext()) {
-                throw new java.util.NoSuchElementException();
+                throw new NoSuchElementException();
             }
-            int lastPosition = N - 1;
-            int randomPosition = StdRandom.uniform(N);
+            int lastPosition = copy - 1;
+            int randomPosition = StdRandom.uniform(copy);
             Item randomItem = getItem(lastPosition, randomPosition, toIterate);
-            N--;
+            copy--;
             return randomItem;
         }
 
@@ -111,14 +112,11 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     public static void main(String[] args) {
         RandomizedQueue<Integer> queue = new RandomizedQueue<>();
-        int n = 5;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 99; i++) {
             queue.enqueue(i);
         }
-        for (int a : queue) {
-            for (int b : queue)
-                System.out.print(a + "-" + b + " ");
-            System.out.println();
+        for (int i = 0; i < 99; i++) {
+            System.out.println("dequeue = " + queue.dequeue());
         }
 
     }
