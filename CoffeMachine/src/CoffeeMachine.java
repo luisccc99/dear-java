@@ -9,7 +9,7 @@ public class CoffeeMachine {
     private double money;
     private final Scanner scanner = new Scanner(System.in);
 
-    public CoffeeMachine(){
+    public CoffeeMachine() {
         water = 400;
         milk = 540;
         coffeeBeans = 120;
@@ -72,7 +72,7 @@ public class CoffeeMachine {
         money += 6;
     }
 
-    public void showMachineState() {
+    public void remaining() {
         System.out.println("The coffee machine has:");
         System.out.println(water + " of water");
         System.out.println(milk + " of milk");
@@ -84,25 +84,28 @@ public class CoffeeMachine {
     public static void main(String[] args) {
         CoffeeMachine machine = new CoffeeMachine();
         Scanner scanner = new Scanner(System.in);
-        machine.showMachineState();
-        System.out.println();
-        System.out.println("Write action (buy, fill, take):");
-        String action = scanner.next();
-        switch (action) {
-            case "buy":
-                machine.buyCoffee();
-                break;
-            case "fill":
-                machine.fillMachine();
-                break;
-            case "take":
-                machine.takeMoney();
-                break;
-            default:
-                break;
+
+        while (true) {
+            System.out.println("Write action (buy, fill, take, remaining, exit):");
+            String action = scanner.next();
+            if (action.equals("exit")) break;
+            switch (action) {
+                case "buy":
+                    machine.buyCoffee();
+                    break;
+                case "fill":
+                    machine.fillMachine();
+                    break;
+                case "take":
+                    machine.takeMoney();
+                    break;
+                case "remaining":
+                    machine.remaining();
+                    break;
+                default:
+                    break;
+            }
         }
-        System.out.println();
-        machine.showMachineState();
 
     }
 }
