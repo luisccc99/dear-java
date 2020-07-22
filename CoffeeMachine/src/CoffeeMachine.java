@@ -40,16 +40,24 @@ public class CoffeeMachine {
     }
 
     public void buyCoffee() {
-        System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino:");
+        System.out.println("What do you want to buy? " +
+                "1 - espresso, 2 - latte, 3 - cappuccino," +
+                " back - to main menu :");
         int variety = scanner.nextInt();
         if (variety == 1) {
             makeEspresso();
         } else if (variety == 2) {
             makeLatte();
-        } else {
+        } else if (variety == 3){
             makeCappuccino();
+        } else {
+            backToMainMenu();
         }
         disposableCups--;
+    }
+
+    private void checkResources(){
+
     }
 
     private void makeEspresso() {
@@ -72,13 +80,17 @@ public class CoffeeMachine {
         money += 6;
     }
 
+    private void backToMainMenu(){}
+
     public void remaining() {
+        System.out.println();
         System.out.println("The coffee machine has:");
         System.out.println(water + " of water");
         System.out.println(milk + " of milk");
         System.out.println(coffeeBeans + " of coffee beans");
         System.out.println(disposableCups + " of disposable cups");
         System.out.println(money + " of money");
+
     }
 
     public static void main(String[] args) {
