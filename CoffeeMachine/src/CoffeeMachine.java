@@ -1,13 +1,100 @@
-
 import java.util.Scanner;
 
+abstract class Coffee {
+    int mlOfWaterNeeded;
+    int coffeeBeansNeeded;
+    int cost;
+
+    public void makeCoffee(CoffeeMachine machine) {
+    }
+
+    public boolean canMakeCoffee(CoffeeMachine machine) {
+        return machine.water > mlOfWaterNeeded &&
+                machine.coffeeBeans > coffeeBeansNeeded &&
+                machine.disposableCups >= 1;
+    }
+}
+abstract class CoffeeWithMilk extends Coffee {
+    int mlOfMilkNeeded;
+
+    @Override
+    public boolean canMakeCoffee(CoffeeMachine machine) {
+        return super.canMakeCoffee(machine) &&
+                machine.milk > mlOfMilkNeeded;
+    }
+}
+
+class Espresso extends Coffee {
+
+    public Espresso() {
+        mlOfWaterNeeded = 250;
+        coffeeBeansNeeded = 16;
+        cost = 4;
+    }
+
+    @Override
+    public void makeCoffee(CoffeeMachine machine) {
+        machine.water -= 250;
+        machine.coffeeBeans -= 16;
+        machine.money += 4;
+    }
+
+    @Override
+    public String toString() {
+        return "Espresso";
+    }
+}
+class Latte extends CoffeeWithMilk {
+
+    public Latte() {
+        mlOfWaterNeeded = 350;
+        mlOfMilkNeeded = 75;
+        coffeeBeansNeeded = 20;
+        cost = 7;
+    }
+
+    @Override
+    public void makeCoffee(CoffeeMachine machine) {
+        machine.water -= 350;
+        machine.milk -= 75;
+        machine.coffeeBeans -= 20;
+        machine.money += 7;
+    }
+
+    @Override
+    public String toString() {
+        return "Latte";
+    }
+}
+class Cappuccino extends CoffeeWithMilk {
+
+    public Cappuccino() {
+        mlOfWaterNeeded = 200;
+        mlOfMilkNeeded = 100;
+        coffeeBeansNeeded = 12;
+        cost = 6;
+    }
+
+    @Override
+    public void makeCoffee(CoffeeMachine machine) {
+        machine.water -= 200;
+        machine.milk -= 100;
+        machine.coffeeBeans -= 12;
+        machine.money += 6;
+    }
+
+    @Override
+    public String toString() {
+        return "Cappuccino";
+    }
+}
+
 public class CoffeeMachine {
-    private int water;
-    private int milk;
-    private int coffeeBeans;
-    private int disposableCups;
-    private double money;
-    private final Scanner scanner = new Scanner(System.in);
+    protected int water;
+    protected int milk;
+    protected int coffeeBeans;
+    protected int disposableCups;
+    protected int money;
 
     public CoffeeMachine() {
         water = 400;
@@ -18,6 +105,7 @@ public class CoffeeMachine {
     }
 
     public void fillMachine() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Write how many ml of water do you want to add:");
         int waterToAdd = scanner.nextInt();
         water += waterToAdd;
@@ -32,65 +120,47 @@ public class CoffeeMachine {
         disposableCups += disposableCupsToAdd;
     }
 
-    public double takeMoney() {
-        double moneyToGave = money;
+    public void takeMoney() {
+        int moneyToGave = money;
         System.out.println("I gave you $" + moneyToGave);
         money = 0;
-        return moneyToGave;
     }
 
     public void buyCoffee() {
-        System.out.println("What do you want to buy? " +
-                "1 - espresso, 2 - latte, 3 - cappuccino," +
-                " back - to main menu :");
-        int variety = scanner.nextInt();
-        if (variety == 1) {
-            makeEspresso();
-        } else if (variety == 2) {
-            makeLatte();
-        } else if (variety == 3){
-            makeCappuccino();
-        } else {
-            backToMainMenu();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu :");
+        String variety = scanner.next();
+        switch (variety) {
+            case "1":
+                makeCoffeeIfPossibleOrShowWarning(new Espresso());
+                break;
+            case "2":
+                makeCoffeeIfPossibleOrShowWarning(new Latte());
+                break;
+            case "3":
+                makeCoffeeIfPossibleOrShowWarning(new Cappuccino());
+                break;
         }
-        disposableCups--;
     }
 
-    private void checkResources(){
-
+    private void makeCoffeeIfPossibleOrShowWarning(Coffee coffee) {
+        if (coffee.canMakeCoffee(this)) {
+            System.out.println("I have enough resources, making you a coffee!");
+            coffee.makeCoffee(this);
+            disposableCups--;
+        } else {
+            System.out.println("Sorry not enough " + coffee);
+        }
     }
-
-    private void makeEspresso() {
-        water -= 250;
-        coffeeBeans -= 16;
-        money += 4;
-    }
-
-    private void makeLatte() {
-        water -= 350;
-        milk -= 75;
-        coffeeBeans -= 20;
-        money += 7;
-    }
-
-    private void makeCappuccino() {
-        water += 200;
-        milk -= 100;
-        coffeeBeans -= 12;
-        money += 6;
-    }
-
-    private void backToMainMenu(){}
 
     public void remaining() {
-        System.out.println();
         System.out.println("The coffee machine has:");
         System.out.println(water + " of water");
         System.out.println(milk + " of milk");
         System.out.println(coffeeBeans + " of coffee beans");
         System.out.println(disposableCups + " of disposable cups");
         System.out.println(money + " of money");
-
+        System.out.println();
     }
 
     public static void main(String[] args) {
