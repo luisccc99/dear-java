@@ -18,6 +18,7 @@ public class Point implements Comparable<Point> {
     private final int x;     // x-coordinate of this point
     private final int y;     // y-coordinate of this point
 
+
     /**
      * Initializes a new point.
      *
@@ -92,10 +93,8 @@ public class Point implements Comparable<Point> {
      * @return the Comparator that defines this ordering on points
      */
     public Comparator<Point> slopeOrder() {
-        /* YOUR CODE HERE */
-        return null;
+        return new SlopeOrder();
     }
-
 
     /**
      * Returns a string representation of this point.
@@ -109,12 +108,25 @@ public class Point implements Comparable<Point> {
         return "(" + x + ", " + y + ")";
     }
 
+    public static class SlopeOrder implements Comparator<Point> {
+
+        @Override
+        public int compare(Point q1, Point q2) {
+            return 0;
+        }
+    }
+
     /**
      * Unit tests the Point data type.
      */
     public static void main(String[] args) {
         Point a = new Point(1, 1);
         Point b = new Point(2, 2);
-
+        StdDraw.enableDoubleBuffering();
+        StdDraw.setXscale(0, 32768);
+        StdDraw.setYscale(0, 32768);
+        a.draw();
+        b.draw();
+        StdDraw.show();
     }
 }

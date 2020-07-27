@@ -1,27 +1,57 @@
 import java.util.Scanner;
 
-abstract class Coffee {
+abstract class Coffee implements inCoffeeMachine {
     int mlOfWaterNeeded;
     int coffeeBeansNeeded;
     int cost;
 
-    public void makeCoffee(CoffeeMachine machine) {
+    @Override
+    public boolean canMakeCoffeeInMachine(CoffeeMachine machine) {
+        return machine.enoughWaterFor(this)
+                && machine.enoughCoffeeBeansFor(this)
+                && machine.enoughDisposableCups();
     }
 
-    public boolean canMakeCoffee(CoffeeMachine machine) {
-        return machine.water > mlOfWaterNeeded &&
-                machine.coffeeBeans > coffeeBeansNeeded &&
-                machine.disposableCups >= 1;
+    @Override
+    public String notSufficientInMachine(CoffeeMachine machine) {
+        String element = "";
+        if (!machine.enoughWaterFor(this))
+            element = "water";
+        else if (!machine.enoughCoffeeBeansFor(this))
+            element = "coffee beans";
+        else if (!machine.enoughDisposableCups())
+            element = "disposable cups";
+        return element;
     }
 }
+
 abstract class CoffeeWithMilk extends Coffee {
     int mlOfMilkNeeded;
 
     @Override
-    public boolean canMakeCoffee(CoffeeMachine machine) {
-        return super.canMakeCoffee(machine) &&
-                machine.milk > mlOfMilkNeeded;
+    public boolean canMakeCoffeeInMachine(CoffeeMachine machine) {
+        return super.canMakeCoffeeInMachine(machine)
+                && machine.enoughMilkFor(this);
     }
+
+    @Override
+    public String notSufficientInMachine(CoffeeMachine machine) {
+        String element = super.notSufficientInMachine(machine);
+        if (element.equals("")) {
+            if (!machine.enoughMilkFor(this))
+                element = "milk";
+        }
+        return element;
+    }
+}
+
+interface inCoffeeMachine {
+
+    void makeCoffeeInMachine(CoffeeMachine machine);
+
+    boolean canMakeCoffeeInMachine(CoffeeMachine machine);
+
+    String notSufficientInMachine(CoffeeMachine machine);
 }
 
 class Espresso extends Coffee {
@@ -33,7 +63,7 @@ class Espresso extends Coffee {
     }
 
     @Override
-    public void makeCoffee(CoffeeMachine machine) {
+    public void makeCoffeeInMachine(CoffeeMachine machine) {
         machine.water -= 250;
         machine.coffeeBeans -= 16;
         machine.money += 4;
@@ -44,6 +74,7 @@ class Espresso extends Coffee {
         return "Espresso";
     }
 }
+
 class Latte extends CoffeeWithMilk {
 
     public Latte() {
@@ -54,7 +85,7 @@ class Latte extends CoffeeWithMilk {
     }
 
     @Override
-    public void makeCoffee(CoffeeMachine machine) {
+    public void makeCoffeeInMachine(CoffeeMachine machine) {
         machine.water -= 350;
         machine.milk -= 75;
         machine.coffeeBeans -= 20;
@@ -66,6 +97,7 @@ class Latte extends CoffeeWithMilk {
         return "Latte";
     }
 }
+
 class Cappuccino extends CoffeeWithMilk {
 
     public Cappuccino() {
@@ -76,7 +108,7 @@ class Cappuccino extends CoffeeWithMilk {
     }
 
     @Override
-    public void makeCoffee(CoffeeMachine machine) {
+    public void makeCoffeeInMachine(CoffeeMachine machine) {
         machine.water -= 200;
         machine.milk -= 100;
         machine.coffeeBeans -= 12;
@@ -144,16 +176,32 @@ public class CoffeeMachine {
     }
 
     private void makeCoffeeIfPossibleOrShowWarning(Coffee coffee) {
-        if (coffee.canMakeCoffee(this)) {
+        if (coffee.canMakeCoffeeInMachine(this)) {
             System.out.println("I have enough resources, making you a coffee!");
-            coffee.makeCoffee(this);
+            coffee.makeCoffeeInMachine(this);
             disposableCups--;
         } else {
-            System.out.println("Sorry not enough " + coffee);
+            System.out.println("Sorry, not enough " + coffee.notSufficientInMachine(this) + "!");
         }
     }
 
-    public void remaining() {
+    protected boolean enoughWaterFor(Coffee coffee) {
+        return water >= coffee.mlOfWaterNeeded;
+    }
+
+    protected boolean enoughCoffeeBeansFor(Coffee coffee) {
+        return coffeeBeans >= coffee.coffeeBeansNeeded;
+    }
+
+    protected boolean enoughMilkFor(CoffeeWithMilk coffee) {
+        return milk >= coffee.mlOfMilkNeeded;
+    }
+
+    protected boolean enoughDisposableCups() {
+        return disposableCups > 0;
+    }
+
+    public void showRemaining() {
         System.out.println("The coffee machine has:");
         System.out.println(water + " of water");
         System.out.println(milk + " of milk");
@@ -170,7 +218,8 @@ public class CoffeeMachine {
         while (true) {
             System.out.println("Write action (buy, fill, take, remaining, exit):");
             String action = scanner.next();
-            if (action.equals("exit")) break;
+            if (action.equals("exit"))
+                break;
             switch (action) {
                 case "buy":
                     machine.buyCoffee();
@@ -182,7 +231,7 @@ public class CoffeeMachine {
                     machine.takeMoney();
                     break;
                 case "remaining":
-                    machine.remaining();
+                    machine.showRemaining();
                     break;
                 default:
                     break;
