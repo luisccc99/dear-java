@@ -9,6 +9,7 @@
  ******************************************************************************/
 
 import java.awt.*;
+import java.util.Arrays;
 import java.util.Comparator;
 
 import edu.princeton.cs.algs4.StdDraw;
@@ -120,13 +121,17 @@ public class Point implements Comparable<Point> {
      * Unit tests the Point data type.
      */
     public static void main(String[] args) {
-        Point a = new Point(1, 1);
-        Point b = new Point(2, 2);
-        StdDraw.enableDoubleBuffering();
-        StdDraw.setXscale(0, 32768);
-        StdDraw.setYscale(0, 32768);
-        a.draw();
-        b.draw();
-        StdDraw.show();
+        Point a = new Point(10000, 0);
+        Point d = new Point(7000, 3000);
+        Point f = new Point(3000, 4000);
+        Point c = new Point(3000, 7000);
+        Point h = new Point(6000, 7000);
+        Point b = new Point(0, 10000);
+        Point g = new Point(14000, 15000);
+        Point e = new Point(20000, 21000);
+        Point[] points = {a, b, c, d, e, f, g, h};
+        BruteCollinearPoints brute = new BruteCollinearPoints(points);
+        System.out.println(Arrays.toString(brute.segments()));
+        System.out.println(brute.numberOfSegments());
     }
 }
