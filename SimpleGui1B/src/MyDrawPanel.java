@@ -5,8 +5,10 @@ public class MyDrawPanel extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g) {
-        Image image = new ImageIcon("duck.jpg").getImage();
-        g.drawImage(image, 5, 5, this);
+        Graphics2D g2d = (Graphics2D) g;
+        GradientPaint gradient = new GradientPaint(0, 0, Color.blue, 50, 50, Color.pink);
+        g2d.setPaint(gradient);
+        g2d.fillRoundRect(0,0, 100, 100, 15, 15);
     }
 
     public static void main(String[] args) {

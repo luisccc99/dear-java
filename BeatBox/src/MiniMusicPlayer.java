@@ -21,7 +21,7 @@ public class MiniMusicPlayer {
 
             int r = 0;
             for (int i = 5; i < 61; i += 4) {
-                r = (int) ((Math.random() * 50) + 1);
+                r = (int) ((Math.random() * 127) + 1);
                 track.add(makeEvent(144, 1, r, 100, i));
                 track.add(makeEvent(176, 1, 127, 0, i));
                 track.add(makeEvent(128, 1, r, 100, i + 2));
@@ -78,6 +78,7 @@ public class MiniMusicPlayer {
 
     public void setUpGui() {
         panel = new MyDrawPanel();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setContentPane(panel);
         frame.setBounds(30, 30, 300, 300);
         frame.setVisible(true);

@@ -18,7 +18,6 @@ public class SimpleAnimation {
             x++;
             y++;
             drawPanel.repaint();
-
             try {
                 Thread.sleep(30);
             } catch (InterruptedException e) {
