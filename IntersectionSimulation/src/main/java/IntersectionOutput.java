@@ -5,7 +5,6 @@ public class IntersectionOutput {
     private final int verticalCars;
     private final int optimizations;
 
-
     public IntersectionOutput(int totalNumberOfCars, int totalNumberOfHorizontalCars, int totalNumberOfVerticalCars, int optimizations) {
         this.numberOfCars = totalNumberOfCars;
         this.horizontalCars = totalNumberOfHorizontalCars;
@@ -27,5 +26,15 @@ public class IntersectionOutput {
 
     public int getTotalNumberOfCars() {
         return numberOfCars;
+    }
+
+    @Override
+    public String toString() {
+        return "IntersectionOutput{" +
+                "numberOfCars=" + numberOfCars +
+                ", horizontalCars=" + horizontalCars +
+                ", verticalCars=" + verticalCars +
+                ", optimizations=" + optimizations +
+                '}';
     }
 }
