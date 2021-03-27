@@ -6,12 +6,13 @@ public class Hourglass {
 		for (int i = 0; i < 6; i++) {
 			for (int j = 0; j < 6; j++) {
 				if (i < rowIndex && j < colIndex) {
-					if (i == (rowIndex - 2)) {
-						System.out.print("[mid]");
-						//System.out.print("[]["+ar[colIndex][rowIndex]+"][]");
+					boolean midRow = i == (rowIndex - 2);
+					boolean midCol = j == (colIndex - 2);
+					System.out.print("("+(rowIndex-2) + ", " + (colIndex-2)+ ")");
+					if (midRow && midCol) {
+//						System.out.println("accept");
 					} else {
-						System.out.print("not mid ");
-						//System.out.print("["+ar[i][j]+"]");
+//						System.out.print("["+ar[i][j]+"]");
 					}
 					if (j == colIndex - 1 || i == rowIndex - 1) {
 						colIndex++;
