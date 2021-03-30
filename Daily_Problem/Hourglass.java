@@ -1,31 +1,5 @@
 public class Hourglass {
 
-	static int hourglassSum(int[][] ar) {
-		int colIndex = 3;
-		int rowIndex = 3;
-		for (int i = 0; i < 6; i++) {
-			for (int j = 0; j < 6; j++) {
-				if (i < rowIndex && j < colIndex) {
-					boolean midRow = i == (rowIndex - 2);
-					boolean midCol = j == (colIndex - 2);
-					System.out.print("("+(rowIndex-2) + ", " + (colIndex-2)+ ")");
-					if (midRow && midCol) {
-//						System.out.println("accept");
-					} else {
-//						System.out.print("["+ar[i][j]+"]");
-					}
-					if (j == colIndex - 1 || i == rowIndex - 1) {
-						colIndex++;
-						rowIndex++;
-					}
-				}
-			}
-			colIndex = 3;
-			System.out.println();
-		}
-		return 1;
-	}
-
 	public static void main(String[] args) {
 		int[][] arr = 
 		   {{1,1,1,0,0,0}, 
@@ -34,7 +8,38 @@ public class Hourglass {
 			{0,0,2,4,4,0},
 			{0,0,0,2,0,0}, 
 			{0,0,1,2,4,0}};
-		System.out.println(hourglassSum(arr));
+		hourglassSum(arr);
+	}
+
+	public static int hourglassSum(int[][] arr) {
+		int N = 6;
+		int colCount = 3;
+		int rowCount = 3;
+		int rowIndex = 0;
+		int colIndex = 0;
+		for (int i = 0; i < N; i++) {
+			for (int j = colIndex; j < colCount; j++) {
+				System.out.print("["+arr[i][j]+"]");
+//				System.out.print("[colCount=" + colCount + ", rowCount=" + rowCount +"]");
+				if (i == rowCount - 1) {
+					if (j == N - 1) {
+						rowIndex++;
+						rowCount++;
+						colCount = 3;
+						colIndex = 0;
+						System.out.println();
+					}
+				}
+			}
+			System.out.println();
+			if (i == rowCount - 1) {
+				i = rowIndex - 1;
+				colCount++;
+				colIndex++;
+				System.out.println();
+			}
+		}
+		return 0;
 	}
 
 }
