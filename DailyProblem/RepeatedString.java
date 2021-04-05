@@ -1,29 +1,44 @@
+import java.util.Arrays;
 
 public class RepeatedString {
 
     public static void main(String[] args) {
-        System.out.println(repeatedString("aba", 10));
+        System.out.println(repeatedString(
+                "ojowrdcpavatfacuunxycyrmpbkvaxyrsgquwehhurnicgicmrpmgegftjszgvsgqavcrvdtsxlkxjpqtlnkjuyraknwxmnthfpt",
+                685118368975L) == 41107102139L);
     }
 
     public static long repeatedString(String s, long n) {
-        if (s.length() == 1) {
+        if (s.length() == 1 && s.charAt(0) == 'a') {
             return n;
         }
-        int repeated = 1;
-        int index = 1;
-        for (int i = 0; i < n; i++) {
-            if (index == s.length()) {
-                if (s.charAt(index - 1) == s.charAt(0)) {
-                    repeated++;
-                }
-                index = 1;
+        char c = 'a';
+        char[] wordChars = s.toCharArray();
+        Arrays.sort(wordChars);
+        int charTimes = 0;
+
+        // number of a's in string s and sorted to not be linear
+        for (int i = 0; i < wordChars.length; i++) {
+            if (c != wordChars[i]) {
+                break;
             }
-            if (s.charAt(index) == s.charAt(index - 1)) {
-                
-                index++;
-                repeated++;
+            charTimes++;
+        }
+
+        long times = (n / s.length());
+        long remaining = n % s.length();
+        int extra = 0;
+
+        // count how many a's are left
+        if (remaining != 0) {
+            // remaining is always less than s.length()
+            for (int i = 0; i < remaining; i++) {
+                if (c == s.charAt(i)) {
+                    extra++;
+                }
             }
         }
-        return repeated;
+
+        return times * charTimes + extra;
     }
 }
