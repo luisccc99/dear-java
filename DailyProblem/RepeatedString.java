@@ -9,12 +9,18 @@ public class RepeatedString {
     }
 
     public static long repeatedString(String s, long n) {
-        if (s.length() == 1 && s.charAt(0) == 'a') {
+        boolean anA = s.length() == 1 && s.charAt(0) == 'a';
+        if (anA) {
             return n;
         }
         char c = 'a';
         char[] wordChars = s.toCharArray();
         Arrays.sort(wordChars);
+        // if string s is a string with just a's return n
+        boolean aLotOfAs = c == wordChars[0] && c == wordChars[wordChars.length - 1];
+        if (aLotOfAs) {
+            return n;
+        }
         int charTimes = 0;
 
         // number of a's in string s and sorted to not be linear
