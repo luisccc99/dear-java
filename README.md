@@ -1,2 +1,2 @@
 # Dear Java
-Programs related with some courses and random stuff that I wanted to test
+Java applications related to Java features, coding problems, and homework...
