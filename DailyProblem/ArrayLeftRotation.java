@@ -33,11 +33,6 @@ public class ArrayLeftRotation {
 			// final position for every item in arr
 			int index = (i - d) < 0 ? arr.length + (i - d) : i - d;
 
-			// put first element to the last position
-			if (index == 0 && i == 0) {
-				cp[arr.length - 1] = arr[0];
-			}
-
 			// put an element in its final position
 			cp[index] = arr[i];
 		}
