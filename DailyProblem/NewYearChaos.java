@@ -1,8 +1,14 @@
-import java.lang.management.BufferPoolMXBean;
 import java.util.Scanner;
 
 /**
- * 
+ * From HackerRank. New Year Chaos Problem It is New Year's Day and people are
+ * in line for the Wonderland rollercoaster ride. Each person wears a sticker
+ * indicating their initial position in the queue from 1 to n. Any person can
+ * bribe the person directly in front of them to swap positions, but they still
+ * wear their original sticker. One person can bribe at most two others.
+ * Determine the minimum number of bribes that took place to get to a given
+ * queue order. Print the number of bribes, or, if anyone has bribed more than
+ * two people, print Too chaotic.
  */
 public class NewYearChaos {
 
@@ -13,26 +19,31 @@ public class NewYearChaos {
         int n = sc.nextInt();
         final int[][] testsCases = new int[t][n];
         int[] testCase = new int[n];
+
         for (int i = 0; i < t; i++) {
-            System.out.println("n=" + n);
-            testsCases[i] = readTestCase(n);
+            displayIsTooChaoticOrBribes(readTestCase(n));
             if (i != t - 1) {
                 n = sc.nextInt();
             }
         }
+
         sc.close();
-        int[] minBribes = getNumberOfBribes(testsCases[t-2], n);
-        int[] totalBribes = getNumberOfBribes(testsCases[t-1], n);
-        boolean isTooChaotic = false;
-        for (int i = 0; i < n; i++) {
-            if(totalBribes[i] > 2) {
-                isTooChaotic = true;
-                break;
+    }
+
+    private static void displayIsTooChaoticOrBribes(int[] arr) {
+        int bribes = 0;
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] - (i + 1) > 2) {
+                System.out.println("Too chaotic");
+                return;
+            }
+            for (int j = Math.max(0, arr[i] - 2); j < i; j++) {
+                if (arr[j] > arr[i]) {
+                    bribes++;
+                }
             }
         }
-        String tooChaotic = isTooChaotic? "\nToo Chaotic" : "";
-        System.out.println(totalOf(minBribes) + tooChaotic);
-        //int totalBribes = getNumberOfBribes(testsCases[t-1], n);
+        System.out.println(bribes);
     }
 
     private static int[] readTestCase(int n) {
@@ -43,25 +54,10 @@ public class NewYearChaos {
         return queue;
     }
 
-    private static int[] getNumberOfBribes(int[] secondLastCase, int n) {
-        int[] bribes = new int[n];
-        for (int i = n; i > 0; i--) {
-            for (int j = n - 1; j >= 0; j--) {
-                if (i == secondLastCase[j]) {
-                    int bribe = i - j - 1;
-                    bribes[i - 1] += bribe > 0? bribe : 0;
-                    continue;
-                }
-            }
-        }
-        return bribes;
-    }
-
-    private static int totalOf(int[] arr) {
-        int total = 0;
+    private static void showArray(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            total += arr[i];
+            System.out.print(arr[i] + " ");
         }
-        return total;
+        System.out.println();
     }
 }
