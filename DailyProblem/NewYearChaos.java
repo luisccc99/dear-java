@@ -17,8 +17,6 @@ public class NewYearChaos {
     public static void main(String[] args) {
         final int t = sc.nextInt();
         int n = sc.nextInt();
-        final int[][] testsCases = new int[t][n];
-        int[] testCase = new int[n];
 
         for (int i = 0; i < t; i++) {
             displayIsTooChaoticOrBribes(readTestCase(n));
@@ -52,12 +50,5 @@ public class NewYearChaos {
             queue[i] = sc.nextInt();
         }
         return queue;
-    }
-
-    private static void showArray(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
     }
 }
