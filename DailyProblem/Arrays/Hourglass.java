@@ -1,3 +1,4 @@
+package Arrays;
 public class Hourglass {
 
 	public static void main(String[] args) {
