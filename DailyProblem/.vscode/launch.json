@@ -1,0 +1,83 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch ATaleOfTwoStacks",
+            "request": "launch",
+            "mainClass": "StacksAndQueues.ATaleOfTwoStacks",
+            "projectName": "DailyProblem_a53a6258"
+        },
+        {
+            "type": "java",
+            "name": "Launch Hourglass",
+            "request": "launch",
+            "mainClass": "Arrays.Hourglass",
+            "projectName": "DailyProblem_a53a6258"
+        },
+        {
+            "type": "java",
+            "name": "Launch FindTheSeed",
+            "request": "launch",
+            "mainClass": "FindTheSeed"
+        },
+        {
+            "type": "java",
+            "name": "Launch RepeatedString",
+            "request": "launch",
+            "mainClass": "RepeatedString",
+            "projectName": "DailyProblem_a53a6258"
+        },
+        {
+            "type": "java",
+            "name": "Launch RepeatedString",
+            "request": "launch",
+            "mainClass": "repeatedString",
+            "projectName": "DailyProblem_a53a6258"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayLeftRotation",
+            "request": "launch",
+            "mainClass": "ArrayLeftRotation",
+            "projectName": "DailyProblem_a53a6258"
+        },
+        {
+            "type": "java",
+            "name": "Launch CountingValleys",
+            "request": "launch",
+            "mainClass": "CountingValleys",
+            "projectName": "DailyProblem_a53a6258"
+        },
+        {
+            "type": "java",
+            "name": "Launch Hourglass",
+            "request": "launch",
+            "mainClass": "Hourglass",
+            "projectName": "DailyProblem_a53a6258"
+        },
+        {
+            "type": "java",
+            "name": "Launch NewYearChaos",
+            "request": "launch",
+            "mainClass": "NewYearChaos",
+            "projectName": "DailyProblem_a53a6258"
+        },
+        {
+            "type": "java",
+            "name": "Launch RepeatedString",
+            "request": "launch",
+            "mainClass": "RepeatedString.class",
+            "projectName": "DailyProblem_a53a6258"
+        }
+    ]
+}

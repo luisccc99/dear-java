@@ -3,6 +3,11 @@ package life;
 public class Cell {
     private byte neighbors;
     private boolean alive;
+    public static final int NEIGHBORS = 8;
+
+    public Cell(boolean alive) {
+        this.alive = alive;
+    }
 
     public boolean isAlive() {
         return alive;
@@ -18,5 +23,9 @@ public class Cell {
 
     public void addNeighbor() {
         neighbors++;
+    }
+
+    public void removeNeighbor() {
+        neighbors--;
     }
 }
