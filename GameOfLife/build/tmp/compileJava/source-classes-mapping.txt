@@ -1,6 +1,0 @@
-life/GameOfLife.java
- life.GameOfLife
-life/Cell.java
- life.Cell
-life/Grid.java
- life.Grid

@@ -1,2 +1,0 @@
-life/GameOfLifeTest.java
- life.GameOfLifeTest
